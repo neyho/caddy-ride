@@ -1,0 +1,376 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉user꞉> 
+; Syntax error compiling at (/home/miso665/dev/caddy-ride/src/caddy/ride.clj:16:1).
+; Unable to resolve symbol: comment in this context
+clj꞉caddy.ride꞉> 
+; Evaluating file: ride.clj
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+{:cached nil,
+ :request-time 237,
+ :repeatable? false,
+ :protocol-version {:name "HTTP", :major 1, :minor 1},
+ :streaming? true,
+ :http-client
+ #object[org.apache.http.impl.client.InternalHttpClient 0x7211c55d "org.apache.http.impl.client.InternalHttpClient@7211c55d"],
+ :chunked? false,
+ :reason-phrase "OK",
+ :headers
+ {"Content-Length" "228",
+  "Content-Type" "text/html; charset=utf-8",
+  "Server" "Caddy",
+  "Date" "Mon, 14 Nov 2022 08:43:54 GMT",
+  "Connection" "close"},
+ :orig-content-encoding nil,
+ :status 200,
+ :length 228,
+ :body
+ "<!DOCTYPE html>\r\n<html>\r\n    <head lang=\"en\">\r\n\t<meta charset=\"UTF-8\">\r\n\t<title>Toddler Devcards</title>\r\n  </head>\r\n  <body>\r\n    <a href=\"https://www.youtube.com/watch?v=0TDYDNTK_oo\">Aligators dating!</a>\r\n  </body>\r\n</html>\r\n",
+ :trace-redirects ["http://localhost:8080/a/"]}
+clj꞉caddy.ride꞉> 
+; Execution error (ExceptionInfo) at slingshot.support/stack-trace (support.clj:201).
+; clj-http: status 404
+clj꞉caddy.ride꞉> *e
+#error {:cause "clj-http: status 404"
+        :data {:cached nil, :request-time 38, :repeatable? false, :protocol-version {:name "HTTP", :major 1, :minor 1}, :streaming? false, :http-client #object[org.apache.http.impl.client.InternalHttpClient 0x633b5e9b "org.apache.http.impl.client.InternalHttpClient@633b5e9b"], :chunked? false, :type :clj-http.client/unexceptional-status, :reason-phrase "Not Found", :headers {"Server" "Caddy", "Date" "Mon, 14 Nov 2022 13:03:16 GMT", "Content-Length" "0", "Connection" "close"}, :orig-content-encoding nil, :status 404, :length 0, :body "", :trace-redirects []}
+        :via
+        [{:type clojure.lang.ExceptionInfo
+          :message "clj-http: status 404"
+          :data {:cached nil, :request-time 38, :repeatable? false, :protocol-version {:name "HTTP", :major 1, :minor 1}, :streaming? false, :http-client #object[org.apache.http.impl.client.InternalHttpClient 0x633b5e9b "org.apache.http.impl.client.InternalHttpClient@633b5e9b"], :chunked? false, :type :clj-http.client/unexceptional-status, :reason-phrase "Not Found", :headers {"Server" "Caddy", "Date" "Mon, 14 Nov 2022 13:03:16 GMT", "Content-Length" "0", "Connection" "close"}, :orig-content-encoding nil, :status 404, :length 0, :body "", :trace-redirects []}
+          :at [slingshot.support$stack_trace invoke "support.clj" 201]}]
+        :trace
+        [[slingshot.support$stack_trace invoke "support.clj" 201]
+         [clj_http.client$exceptions_response invokeStatic "client.clj" 241]
+         [clj_http.client$exceptions_response invoke "client.clj" 232]
+         [clj_http.client$wrap_exceptions$fn__7721 invoke "client.clj" 250]
+         [clj_http.client$wrap_accept$fn__7979 invoke "client.clj" 728]
+         [clj_http.client$wrap_accept_encoding$fn__7986 invoke "client.clj" 750]
+         [clj_http.client$wrap_content_type$fn__7973 invoke "client.clj" 711]
+         [clj_http.client$wrap_form_params$fn__8094 invoke "client.clj" 959]
+         [clj_http.client$wrap_nested_params$fn__8115 invoke "client.clj" 993]
+         [clj_http.client$wrap_flatten_nested_params$fn__8124 invoke "client.clj" 1017]
+         [clj_http.client$wrap_method$fn__8052 invoke "client.clj" 893]
+         [clj_http.cookies$wrap_cookies$fn__5974 invoke "cookies.clj" 128]
+         [clj_http.links$wrap_links$fn__7495 invoke "links.clj" 63]
+         [clj_http.client$wrap_unknown_host$fn__8132 invoke "client.clj" 1046]
+         [clj_http.client$request_STAR_ invokeStatic "client.clj" 1174]
+         [clj_http.client$request_STAR_ invoke "client.clj" 1167]
+         [clj_http.client$post invokeStatic "client.clj" 1192]
+         [clj_http.client$post doInvoke "client.clj" 1188]
+         [clojure.lang.RestFn invoke "RestFn.java" 410]
+         [caddy.ride$eval10413 invokeStatic "NO_SOURCE_FILE" 27]
+         [caddy.ride$eval10413 invoke "NO_SOURCE_FILE" 27]
+         [clojure.lang.Compiler eval "Compiler.java" 7194]
+         [clojure.lang.Compiler eval "Compiler.java" 7149]
+         [clojure.core$eval invokeStatic "core.clj" 3215]
+         [clojure.core$eval invoke "core.clj" 3211]
+         [nrepl.middleware.interruptible_eval$evaluate$fn__1265$fn__1266 invoke "interruptible_eval.clj" 87]
+         [clojure.lang.AFn applyToHelper "AFn.java" 152]
+         [clojure.lang.AFn applyTo "AFn.java" 144]
+         [clojure.core$apply invokeStatic "core.clj" 667]
+         [clojure.core$with_bindings_STAR_ invokeStatic "core.clj" 1990]
+         [clojure.core$with_bindings_STAR_ doInvoke "core.clj" 1990]
+         [clojure.lang.RestFn invoke "RestFn.java" 425]
+         [nrepl.middleware.interruptible_eval$evaluate$fn__1265 invoke "interruptible_eval.clj" 87]
+         [clojure.main$repl$read_eval_print__9206$fn__9209 invoke "main.clj" 437]
+         [clojure.main$repl$read_eval_print__9206 invoke "main.clj" 437]
+         [clojure.main$repl$fn__9215 invoke "main.clj" 458]
+         [clojure.main$repl invokeStatic "main.clj" 458]
+         [clojure.main$repl doInvoke "main.clj" 368]
+         [clojure.lang.RestFn invoke "RestFn.java" 1523]
+         [nrepl.middleware.interruptible_eval$evaluate invokeStatic "interruptible_eval.clj" 84]
+         [nrepl.middleware.interruptible_eval$evaluate invoke "interruptible_eval.clj" 56]
+         [nrepl.middleware.interruptible_eval$interruptible_eval$fn__1298$fn__1302 invoke "interruptible_eval.clj" 152]
+         [clojure.lang.AFn run "AFn.java" 22]
+         [nrepl.middleware.session$session_exec$main_loop__1368$fn__1372 invoke "session.clj" 218]
+         [nrepl.middleware.session$session_exec$main_loop__1368 invoke "session.clj" 217]
+         [clojure.lang.AFn run "AFn.java" 22]
+         [java.lang.Thread run "Thread.java" 829]]}
+clj꞉caddy.ride꞉> 
+; Execution error (ExceptionInfo) at slingshot.support/stack-trace (support.clj:201).
+; clj-http: status 404
+clj꞉caddy.ride꞉> 
+; Execution error (ExceptionInfo) at slingshot.support/stack-trace (support.clj:201).
+; clj-http: status 404
+clj꞉caddy.ride꞉> *e
+#error {:cause "clj-http: status 404"
+        :data {:cached nil, :request-time 22, :repeatable? false, :protocol-version {:name "HTTP", :major 1, :minor 1}, :streaming? false, :http-client #object[org.apache.http.impl.client.InternalHttpClient 0x3ee7a146 "org.apache.http.impl.client.InternalHttpClient@3ee7a146"], :chunked? false, :type :clj-http.client/unexceptional-status, :reason-phrase "Not Found", :headers {"Server" "Caddy", "Date" "Mon, 14 Nov 2022 13:15:08 GMT", "Content-Length" "0", "Connection" "close"}, :orig-content-encoding nil, :status 404, :length 0, :body "", :trace-redirects []}
+        :via
+        [{:type clojure.lang.ExceptionInfo
+          :message "clj-http: status 404"
+          :data {:cached nil, :request-time 22, :repeatable? false, :protocol-version {:name "HTTP", :major 1, :minor 1}, :streaming? false, :http-client #object[org.apache.http.impl.client.InternalHttpClient 0x3ee7a146 "org.apache.http.impl.client.InternalHttpClient@3ee7a146"], :chunked? false, :type :clj-http.client/unexceptional-status, :reason-phrase "Not Found", :headers {"Server" "Caddy", "Date" "Mon, 14 Nov 2022 13:15:08 GMT", "Content-Length" "0", "Connection" "close"}, :orig-content-encoding nil, :status 404, :length 0, :body "", :trace-redirects []}
+          :at [slingshot.support$stack_trace invoke "support.clj" 201]}]
+        :trace
+        [[slingshot.support$stack_trace invoke "support.clj" 201]
+         [clj_http.client$exceptions_response invokeStatic "client.clj" 241]
+         [clj_http.client$exceptions_response invoke "client.clj" 232]
+         [clj_http.client$wrap_exceptions$fn__7721 invoke "client.clj" 250]
+         [clj_http.client$wrap_accept$fn__7979 invoke "client.clj" 728]
+         [clj_http.client$wrap_accept_encoding$fn__7986 invoke "client.clj" 750]
+         [clj_http.client$wrap_content_type$fn__7973 invoke "client.clj" 711]
+         [clj_http.client$wrap_form_params$fn__8094 invoke "client.clj" 959]
+         [clj_http.client$wrap_nested_params$fn__8115 invoke "client.clj" 993]
+         [clj_http.client$wrap_flatten_nested_params$fn__8124 invoke "client.clj" 1017]
+         [clj_http.client$wrap_method$fn__8052 invoke "client.clj" 893]
+         [clj_http.cookies$wrap_cookies$fn__5974 invoke "cookies.clj" 128]
+         [clj_http.links$wrap_links$fn__7495 invoke "links.clj" 63]
+         [clj_http.client$wrap_unknown_host$fn__8132 invoke "client.clj" 1046]
+         [clj_http.client$request_STAR_ invokeStatic "client.clj" 1174]
+         [clj_http.client$request_STAR_ invoke "client.clj" 1167]
+         [clj_http.client$post invokeStatic "client.clj" 1192]
+         [clj_http.client$post doInvoke "client.clj" 1188]
+         [clojure.lang.RestFn invoke "RestFn.java" 410]
+         [caddy.ride$eval10417 invokeStatic "NO_SOURCE_FILE" 27]
+         [caddy.ride$eval10417 invoke "NO_SOURCE_FILE" 27]
+         [clojure.lang.Compiler eval "Compiler.java" 7194]
+         [clojure.lang.Compiler eval "Compiler.java" 7149]
+         [clojure.core$eval invokeStatic "core.clj" 3215]
+         [clojure.core$eval invoke "core.clj" 3211]
+         [nrepl.middleware.interruptible_eval$evaluate$fn__1265$fn__1266 invoke "interruptible_eval.clj" 87]
+         [clojure.lang.AFn applyToHelper "AFn.java" 152]
+         [clojure.lang.AFn applyTo "AFn.java" 144]
+         [clojure.core$apply invokeStatic "core.clj" 667]
+         [clojure.core$with_bindings_STAR_ invokeStatic "core.clj" 1990]
+         [clojure.core$with_bindings_STAR_ doInvoke "core.clj" 1990]
+         [clojure.lang.RestFn invoke "RestFn.java" 425]
+         [nrepl.middleware.interruptible_eval$evaluate$fn__1265 invoke "interruptible_eval.clj" 87]
+         [clojure.main$repl$read_eval_print__9206$fn__9209 invoke "main.clj" 437]
+         [clojure.main$repl$read_eval_print__9206 invoke "main.clj" 437]
+         [clojure.main$repl$fn__9215 invoke "main.clj" 458]
+         [clojure.main$repl invokeStatic "main.clj" 458]
+         [clojure.main$repl doInvoke "main.clj" 368]
+         [clojure.lang.RestFn invoke "RestFn.java" 1523]
+         [nrepl.middleware.interruptible_eval$evaluate invokeStatic "interruptible_eval.clj" 84]
+         [nrepl.middleware.interruptible_eval$evaluate invoke "interruptible_eval.clj" 56]
+         [nrepl.middleware.interruptible_eval$interruptible_eval$fn__1298$fn__1302 invoke "interruptible_eval.clj" 152]
+         [clojure.lang.AFn run "AFn.java" 22]
+         [nrepl.middleware.session$session_exec$main_loop__1368$fn__1372 invoke "session.clj" 218]
+         [nrepl.middleware.session$session_exec$main_loop__1368 invoke "session.clj" 217]
+         [clojure.lang.AFn run "AFn.java" 22]
+         [java.lang.Thread run "Thread.java" 829]]}
+clj꞉caddy.ride꞉> 
+{"apps"
+ {"http"
+  {"servers"
+   {"srv0"
+    {"automatic_https" {"skip" ["localhost"]},
+     "listen" [":8080"],
+     "routes"
+     [{"handle"
+       [{"handler" "subroute",
+         "routes"
+         [{"handle"
+           [{"handler" "vars", "root" "caddy-ride/web/"}
+            {"handler" "templates"}
+            {"browse" {}, "handler" "file_server", "hide" [".\\Caddyfile"]}]}]}],
+       "match" [{"host" ["localhost"]}],
+       "terminal" true}]}}}}}
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+{"apps"
+ {"http"
+  {"servers"
+   {"srv0"
+    {"automatic_https" {"skip" ["localhost"]},
+     "listen" [":8080"],
+     "routes"
+     [{"handle"
+       [{"handler" "subroute",
+         "routes"
+         [{"handle"
+           [{"handler" "vars", "root" "caddy-ride/web/"}
+            {"handler" "templates"}
+            {"browse" {}, "handler" "file_server", "hide" [".\\Caddyfile"]}]}]}],
+       "match" [{"host" ["localhost"]}],
+       "terminal" true}]}}}}}
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+; Evaluating file: ride.clj
+nil
+clj꞉caddy.ride꞉> 
+{"apps"
+ {"http"
+  {"servers"
+   {"srv0"
+    {"automatic_https" {"skip" ["localhost"]},
+     "listen" [":2019"],
+     "routes"
+     [{"handle"
+       [{"handler" "subroute",
+         "routes"
+         [{"handle"
+           [{"handler" "vars", "root" "caddy-ride/web/"}
+            {"handler" "templates"}
+            {"browse" {}, "handler" "file_server", "hide" [".\\Caddyfile"]}]}]}],
+       "match" [{"host" ["localhost"]}],
+       "terminal" true}]}}}}}
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+; Execution error at clojure.data.json/write-generic (json.clj:599).
+; Don't know how to write JSON of class org.apache.http.impl.client.InternalHttpClient
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+; Execution error (IllegalArgumentException) at caddy.ride/eval10468 (REPL:27).
+; Key must be integer
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+{:cached nil,
+ :request-time 3,
+ :repeatable? false,
+ :protocol-version {:name "HTTP", :major 1, :minor 1},
+ :streaming? true,
+ :http-client
+ #object[org.apache.http.impl.client.InternalHttpClient 0x614b9f7a "org.apache.http.impl.client.InternalHttpClient@614b9f7a"],
+ :chunked? true,
+ :reason-phrase "OK",
+ :headers
+ {"Content-Type" "application/json",
+  "Trailer" "ETag",
+  "Date" "Mon, 14 Nov 2022 13:52:45 GMT",
+  "Connection" "close",
+  "Transfer-Encoding" "chunked"},
+ :orig-content-encoding nil,
+ :status 200,
+ :length -1,
+ :body "null\n",
+ :trace-redirects []}
+clj꞉caddy.ride꞉> 
+{:cached nil,
+ :request-time 5,
+ :repeatable? false,
+ :protocol-version {:name "HTTP", :major 1, :minor 1},
+ :streaming? true,
+ :http-client
+ #object[org.apache.http.impl.client.InternalHttpClient 0x4cc5542c "org.apache.http.impl.client.InternalHttpClient@4cc5542c"],
+ :chunked? true,
+ :reason-phrase "OK",
+ :headers
+ {"Content-Type" "application/json",
+  "Trailer" "ETag",
+  "Date" "Mon, 14 Nov 2022 13:53:04 GMT",
+  "Connection" "close",
+  "Transfer-Encoding" "chunked"},
+ :orig-content-encoding nil,
+ :status 200,
+ :length -1,
+ :body
+ "{\"apps\":{\"http\":{\"servers\":{\"srv0\":{\"automatic_https\":{\"skip\":[\"localhost\"]},\"listen\":[\":2019\"],\"routes\":[{\"handle\":[{\"handler\":\"subroute\",\"routes\":[{\"handle\":[{\"handler\":\"vars\",\"root\":\"caddy-ride/web/\"},{\"handler\":\"templates\"},{\"browse\":{},\"handler\":\"file_server\",\"hide\":[\".\\\\Caddyfile\"]}]}]}],\"match\":[{\"host\":[\"localhost\"]}],\"terminal\":true}]}}}}}\n",
+ :trace-redirects []}
+clj꞉caddy.ride꞉> 
+{"apps"
+ {"http"
+  {"servers"
+   {"srv0"
+    {"automatic_https" {"skip" ["localhost"]},
+     "listen" [":2019"],
+     "routes"
+     [{"handle"
+       [{"handler" "subroute",
+         "routes"
+         [{"handle"
+           [{"handler" "vars", "root" "caddy-ride/web/"}
+            {"handler" "templates"}
+            {"browse" {}, "handler" "file_server", "hide" [".\\Caddyfile"]}]}]}],
+       "match" [{"host" ["localhost"]}],
+       "terminal" true}]}}}}}
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+{:cached nil,
+ :request-time 13,
+ :repeatable? false,
+ :protocol-version {:name "HTTP", :major 1, :minor 1},
+ :streaming? false,
+ :http-client
+ #object[org.apache.http.impl.client.InternalHttpClient 0x1826ce75 "org.apache.http.impl.client.InternalHttpClient@1826ce75"],
+ :chunked? false,
+ :reason-phrase "OK",
+ :headers {"Date" "Mon, 14 Nov 2022 14:01:02 GMT", "Content-Length" "0", "Connection" "close"},
+ :orig-content-encoding nil,
+ :status 200,
+ :length 0,
+ :body "",
+ :trace-redirects []}
+clj꞉caddy.ride꞉> 
+; Execution error (ConnectException) at java.net.PlainSocketImpl/socketConnect (PlainSocketImpl.java:-2).
+; Connection refused (Connection refused)
+clj꞉caddy.ride꞉> 
+; Execution error (ConnectException) at java.net.PlainSocketImpl/socketConnect (PlainSocketImpl.java:-2).
+; Connection refused (Connection refused)
+clj꞉caddy.ride꞉> 
+; Execution error (ConnectException) at java.net.PlainSocketImpl/socketConnect (PlainSocketImpl.java:-2).
+; Connection refused (Connection refused)
+clj꞉caddy.ride꞉> 
+; Evaluating file: ride.clj
+nil
+clj꞉caddy.ride꞉> 
+; Execution error (ConnectException) at java.net.PlainSocketImpl/socketConnect (PlainSocketImpl.java:-2).
+; Connection refused (Connection refused)
+clj꞉caddy.ride꞉> 
+; Execution error (ConnectException) at java.net.PlainSocketImpl/socketConnect (PlainSocketImpl.java:-2).
+; Connection refused (Connection refused)
+clj꞉caddy.ride꞉> 
+; Execution error (ConnectException) at java.net.PlainSocketImpl/socketConnect (PlainSocketImpl.java:-2).
+; Connection refused (Connection refused)
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
+nil
+clj꞉caddy.ride꞉> 
