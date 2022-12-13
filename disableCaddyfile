@@ -1,0 +1,18 @@
+localhost {
+    rewrite /a /a/
+    rewrite /b /b/
+
+    route /a/* {
+        root * ./web/a
+        uri strip_prefix /a
+        try_files {path} /index.html
+        file_server
+    }
+
+    route /b/* {
+        root * ./web/b
+        uri strip_prefix /b
+        try_files {path} /index.html
+        file_server
+    }
+}

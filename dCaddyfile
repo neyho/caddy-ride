@@ -1,0 +1,5 @@
+localhost {
+    reverse_proxy localhost:8080
+    redir /index.html /app/flutter/testing/test/overview
+    redir / /app/flutter/testing/test/overview
+}
